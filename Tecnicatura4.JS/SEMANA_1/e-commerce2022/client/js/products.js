@@ -2,21 +2,21 @@ const productos = [
     {
         id: 1,
         productName: "Banana",
-        price: 400,
+        price: 500,
         quanty: 1,
         img: "media/banana.png",
     },
     {
         id: 2,
         productName: "Leche",
-        price: 450,
+        price: 480,
         quanty: 1,
         img: "media/leche.png",
     },
     {
         id: 3,
         productName: "Pollo",
-        price: 950,
+        price: 960,
         quanty: 1,
         img: "media/pollo.png",
     },
@@ -37,7 +37,7 @@ const productos = [
     {
         id: 6,
         productName: "Varios",
-        price: 5102,
+        price: 5100,
         quanty: 1,
         img: "media/varios.png",
     },

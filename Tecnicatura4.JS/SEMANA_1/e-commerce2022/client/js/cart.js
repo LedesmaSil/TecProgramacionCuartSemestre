@@ -7,7 +7,9 @@ const displayCart = () => {
     modalContainer.innerHTML = "";
     modalContainer.style.display = "block";
     modalOverlay.style.display = "block";
+
     //modal Header
+
     const modalHeader = document.createElement("div");
 
     const modalClose = document.createElement("div");
@@ -18,7 +20,7 @@ const displayCart = () => {
     modalClose.addEventListener("click", () => {
         modalContainer.style.display = "none";
         modalOverlay.style.display = "none";
-    })
+    });
 
     const modalTitle = document.createElement("div");
     modalTitle.innerText = "Cart";
@@ -26,6 +28,70 @@ const displayCart = () => {
     modalHeader.append(modalTitle);
 
     modalContainer.append(modalHeader);
+
+    //modal Body
+
+    cart.forEach((product) => {
+        const modalBody = document.createElement("div");
+        modalBody.className = "modal-body";
+        modalBody.innerHTML = `
+        <div class="product">
+                <img class="product-img" src="${product.img}" />
+                <div class="product-info">
+                    <h4>${product.productName}</h4>
+                </div>
+            <div class="quatity">
+                <span class="quantity-btn-decrece">-</span>
+                <span class="quantity-input">${product.quanty}</span>
+                <span class="quantity-btn-increce">+</span>
+            </div>
+                <div class="price">${product.price * product.quanty} $</div>
+                <div class="delete-product">❌</div>
+        </div>
+        `;
+        modalContainer.append(modalBody);
+
+        const decrece = modalBody.querySelector(".quantity-btn-decrece");
+        decrece.addEventListener("click", () => {
+            if (product.quanty !== 1) {
+                product.quanty--;
+                displayCart();
+            }
+        });
+
+        const increce = modalBody.querySelector(".quantity-btn-increce");
+        increce.addEventListener("click", () => {
+            product.quanty++;
+            displayCart();
+        });
+
+        //delete
+
+        const deleteProduct = modalBody.querySelector(".delete-product");
+
+        deleteProduct.addEventListener("click", () => {
+            deleteCartProduct(product.id);
+        });
+    });
+
+    //modal footer
+
+    const total = cart.reduce((acc, el) => acc + el.price * el.quanty, 0);
+
+    const modalFooter = document.createElement("div");
+    modalFooter.className = "modal-footer";
+    modalFooter.innerHTML = `
+    <div class="total-price"> $ ${total}</div>
+
+    `;
+    modalContainer.append(modalFooter);
 };
 
 cartBtn.addEventListener("click", displayCart);
+
+const deleteCartProduct = (id) => {
+    const foundId = cart.findIndex((Element) => Element.id === id);
+    console.log(foundId);
+    cart.splice(foundId ,);
+    displayCart();
+};
