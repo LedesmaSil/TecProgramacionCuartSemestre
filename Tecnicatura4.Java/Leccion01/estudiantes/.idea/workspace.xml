@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1459fe86-313b-43cd-a8a8-ac71db51e188" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../SistemaEstudiantes/src/main/java/UTN/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Tecnicatura4.JS/SEMANA_1/e-commerce2022/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Tecnicatura4.JS/SEMANA_1/e-commerce2022/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Tecnicatura4.JS/SEMANA_1/e-commerce2022/client/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Tecnicatura4.JS/SEMANA_1/e-commerce2022/client/js/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Tecnicatura4.JS/SEMANA_1/e-commerce2022/client/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Tecnicatura4.JS/SEMANA_1/e-commerce2022/client/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Tecnicatura4.JS/SEMANA_1/e-commerce2022/client/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Tecnicatura4.JS/SEMANA_1/e-commerce2022/client/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SistemaEstudiantes/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../SistemaEstudiantes/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SistemaEstudiantes/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../SistemaEstudiantes/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SistemaEstudiantes/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../SistemaEstudiantes/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SistemaEstudiantes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../SistemaEstudiantes/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2Vp2ZMsil7NHFxNVdx6c9gHTC8A" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Propietario/TecProgramacionCuartSemestre/TecProgramacionCuartSemestre/Tecnicatura4.Java/Leccion01/estudiantes/estudiantes"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1459fe86-313b-43cd-a8a8-ac71db51e188" name="Changes" comment="" />
+      <created>1695518758554</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695518758554</updated>
+    </task>
+    <servers />
+  </component>
+</project>

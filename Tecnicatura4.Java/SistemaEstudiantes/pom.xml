@@ -7,6 +7,10 @@
     <groupId>UTN</groupId>
     <artifactId>Estudiante</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>UTN</module>
+    </modules>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
