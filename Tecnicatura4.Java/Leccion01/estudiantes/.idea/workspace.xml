@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1459fe86-313b-43cd-a8a8-ac71db51e188" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utn/estudiantes/EstudiantesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utn/estudiantes/EstudiantesApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utn/estudiantes/servicio/EstudianteServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utn/estudiantes/servicio/EstudianteServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1459fe86-313b-43cd-a8a8-ac71db51e188" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
