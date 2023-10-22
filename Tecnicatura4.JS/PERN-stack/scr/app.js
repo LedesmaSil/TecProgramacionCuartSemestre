@@ -7,17 +7,16 @@ const app = express();
 //Middleweres
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false}));
+app.use(express.urlencoded({ extended: false }));
 
-app.get("/", (req, res) => res.json({message: "Bienvenidos a mi proyecto" }));
+app.get("/", (req, res) => res.json({ message: "Bienvenidos a mi proyecto" }));
 app.use('/api',tareasRoutes);
-app.use('/api',authRoutes);
-
+app.use('/api',authRoutes)
 //Manejando errores
 app.use((err, req, res, next) => {
     res.status(500).json({
         status: "error",
-        message: errorUtil.message
+        message: err.message
     });
 });
 
