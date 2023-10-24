@@ -16,7 +16,7 @@ function adios(nombre, otrocallback) {
     setTimeout( function () {
         console.log('Adios '+ nombre);
         otrocallback();
-    }, 1500);
+    }, 1000);
 }
 
 //Funcion recursiva
