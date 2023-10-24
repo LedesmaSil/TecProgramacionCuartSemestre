@@ -20,4 +20,7 @@ public class Libro {
     String autor;
     Double precio;
     Integer existencias;
+
+    public Libro(int idLibro, String nombreLibro, String autor, double precio, int existencias) {
+    }
 }
