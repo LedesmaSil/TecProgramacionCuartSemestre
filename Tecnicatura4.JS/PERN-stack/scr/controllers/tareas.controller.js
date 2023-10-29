@@ -1,15 +1,15 @@
 import { pool } from '../db.js';
 
 export const listarTareas = async (req, res) => {
-
+    console.log(req.usuarioId);
     const resultado = await pool.Query('SELECT * FROM tareas');
-    console.log(resultado);
     return res.json(resultado.rows);
 }
 
 export const listarTarea = async (req, res) => {
+    console.log(req.cookies.token);
     const resultado = await pool.query('SELECT * FROM tareas WHERE id = $1', [req.params.id]);
-    if (resultado.rowCount == 0) {
+    if (resultado.rowCount === 0) {
         return res.status(404).json({
             message: 'La tarea no existe'
         });
