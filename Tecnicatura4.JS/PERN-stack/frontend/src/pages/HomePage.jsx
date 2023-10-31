@@ -1,10 +1,12 @@
-function App() {
+import{useContext} from 'react';
+import {AuthContext} from '../context/AuthContext'
+
+function HomePage() {
+  const data = useContext(AuthContext);
+  console.log(data);
   return (
-    <Routes>
-      <Route push="/" element={<h1>Home</h1>} />
-      <Route push="/about" element={<h1>About</h1>} />
-    </Routes>
+    <div>HomePage</div>
   )
 }
 
-export default App
+export default HomePage

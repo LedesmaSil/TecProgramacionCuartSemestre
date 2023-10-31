@@ -1,10 +1,9 @@
-function App() {
+import { useAuth } from "../context/AuthContext";
+
+function ProfilePage() {
   return (
-    <Routes>
-      <Route push="/" element={<h1>Home</h1>} />
-      <Route push="/about" element={<h1>About</h1>} />
-    </Routes>
+    <div>ProfilePage</div>
   )
 }
 
-export default App
+export default ProfilePage
