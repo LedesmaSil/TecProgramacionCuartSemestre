@@ -2,7 +2,7 @@ import { pool } from '../db.js';
 
 export const listarTareas = async (req, res) => {
     console.log(req.usuarioId);
-    const resultado = await pool.Query('SELECT * FROM tareas WHERE ususario_id = $1', [req.usuarioId]);
+    const resultado = await pool.query('SELECT * FROM tareas WHERE ususario_id = $1', [req.usuarioId]);
     return res.json(resultado.rows);
 }
 

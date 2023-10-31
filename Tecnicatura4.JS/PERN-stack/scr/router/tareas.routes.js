@@ -13,7 +13,7 @@ router.get('/tareas/:id',isAuth, listarTarea);
 
 router.post('/tareas',isAuth, validateSchema(createTareasSchema), crearTarea);
 
-router.put('/tareas/:id',isAuth, validateSchema(updateTareaSchema), actualizarTarea);
+router.put('/tareas/:id',isAuth, validateSchema(updateTareasSchema), actualizarTarea);
 
 router.delete('/tareas/:id',isAuth, eliminarTarea);
 

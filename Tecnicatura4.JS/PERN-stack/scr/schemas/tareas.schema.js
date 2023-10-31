@@ -1,6 +1,6 @@
 import {z} from "zod";
 
- export const createTareasSchema = z.object({
+export const createTareasSchema = z.object({
     titulo: z.string({
         required_error: "El titulo debe ser un string.",
     }).min(1, {

@@ -6,7 +6,7 @@ import md5 from "md5";
 export const signin =  async (req, res) => {
     const {email, password} = req.body;
 
-    const result = pool.query("SELECT * FROM usuarios WHERE wmail = $1", [email])
+    const result = await pool.query("SELECT * FROM usuarios WHERE email = $1", [email])
 
     if(result.rowCount === 0){
         return res.status(400).json({message: "El correo no esta registrado"});
@@ -43,7 +43,7 @@ export const signup = async(req, res, next) => {
         console.log(result);
         res.cookie("token", token, {
             //httpOnly: true,
-            //secure: true,
+            secure: true,
             sameSite: "none",
             maxAge: 60 * 60 *24 *1000,}) // 1 day})
         return res.json(result.rows[0]);

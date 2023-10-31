@@ -7,7 +7,7 @@ function RegisterPage() {
 
   const { register, handleSubmit, formState: {errors} } = useForm();
 
-  const {signup, errors: setUseErrors} = useAuth();
+  const {signup, errors: setUserErrors} = useAuth();
   const navigate = useNavigate();
   const onSubmit = handleSubmit(async(data) => { 
       const user = await signup(data);
@@ -17,10 +17,16 @@ function RegisterPage() {
   });
 
 
+  
   return (
     <div className="h-[calc(100vh-64px)] flex items-center jutify-centers">
       <Card>
-        <h3 className="text-4xl font-bold my-2">Registro</h3>
+        {setUserErrors &&
+          setUserErrors.map((error) => {
+            <p className=bg-red-500 text-white p-2"> {error} </p>
+          ))}
+        
+          <h3 className="text-4xl font-bold my-2">Registro</h3>
           <form onSubmit={onSubmit}>
             <Label htmlFor="name">Nombre</Label>
             <Input placeholder="Ingrese su nombre" 
@@ -40,7 +46,7 @@ function RegisterPage() {
             {
               errors.password && <p className="text-red-500">Este campo es requerido</p>
             }
-            <Button>Registrarse</Button>
+              <Button>Registrarse</Button>
           </form>
           <div className="flex justify-botween my-4">
             <p>Ya tienes cuenta?</p>

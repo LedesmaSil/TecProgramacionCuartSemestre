@@ -6,7 +6,7 @@ import { signupSchema, signinSchema } from "../schemas/auth.schema.js";
 
 const router = Router();
 
-router.post("/signin",validateSchema(signin), signin );
+router.post("/signin", validateSchema(signinSchema), signin );
 
 router.post("/signup", validateSchema(signupSchema), signup );
 
