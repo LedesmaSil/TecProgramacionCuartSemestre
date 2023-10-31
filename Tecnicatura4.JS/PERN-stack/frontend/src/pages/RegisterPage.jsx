@@ -1,4 +1,4 @@
-import { Button, Card, Input, Label } from "../components/ui";
+import { Button, Card, Container, Input, Label } from "../components/ui";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -19,12 +19,12 @@ function RegisterPage() {
 
   
   return (
-    <div className="h-[calc(100vh-64px)] flex items-center jutify-centers">
+    <Container className="h-[calc(100vh-10rem)] flex items-center jutify-centers">
       <Card>
         {setUserErrors &&
           setUserErrors.map((error) => {
-            <p className=bg-red-500 text-white p-2"> {error} </p>
-          ))}
+            <p className = "bg-red-500 text-white p-2"> {error} </p>
+          })}
         
           <h3 className="text-4xl font-bold my-2">Registro</h3>
           <form onSubmit={onSubmit}>
@@ -53,7 +53,7 @@ function RegisterPage() {
             <Link to="/login">Iniciar Sesión</Link>
           </div>
       </Card>
-    </div>
+    </Container>
   );
 }
 
