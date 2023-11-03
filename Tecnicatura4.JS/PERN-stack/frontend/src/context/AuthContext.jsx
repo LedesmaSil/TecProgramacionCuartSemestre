@@ -1,6 +1,6 @@
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext ,useEffect } from "react";
 import Cookie from "js-cookie";
-import axios from "../api/axios.js";
+import axios from "../api/axios";
 
 export const AuthContext = createContext();
 
@@ -16,6 +16,7 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [isAuth, setIsAuth] = useState(false);
   const [errors, setErrors] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const signin = async (data) => {
     try {
@@ -48,22 +49,38 @@ export function AuthProvider({ children }) {
     }
   };
 
-  useEffect(() => {
-    if (Cookie.get("token")) {
-      axios
-        .get("/profile")
-        .then((res) => {
-          setUser(res.data);
-          setIsAuth(true);
-        })
-        .catch((error) => {
-          setUser(null);
-          setIsAuth(false);
-          console.log(error);
-        });
-    }
-  }, []);
+  const signout = async() => {
+    const res = await axios.post("/signout");
+    setUser(null);
+    setIsAuth(false);
+    return res.data;
+  }
 
+    useEffect(() => {
+      setLoading(true);
+        if (Cookie.get("token")) {
+            axios.get("/profile").then((res) => {
+                setUser(res.data);
+                setIsAuth(true);
+                setLoading(false);
+            }).catch((error) => {
+                setUser(null);
+                setIsAuth(false);
+                setLoading(false);
+                console.log(error);
+            });
+        }
+        setLoading(false);
+    }, []);
+
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        setErrors(null);
+      }, 4000);
+      return () => {
+        clearTimeout(timeout);
+      };
+    }, [errors]);
   return (
     <AuthContext.Provider
       value={{
@@ -73,6 +90,8 @@ export function AuthProvider({ children }) {
         signup,
         setUser,
         signin,
+        signout,
+        loading,
       }}
     >
       {children}

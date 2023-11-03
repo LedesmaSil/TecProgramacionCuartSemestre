@@ -1,16 +1,15 @@
 import pg from "pg";
+import{PG_PORT,PG_HOST,PG_USER,PG_PASSWORD,PG_DATABASE} from "./config.js"
 
-const pool = new pg.Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "PERN",
-    password: "240484",
-    port: 5432,
+
+export const pool = new pg.Pool({
+    port: PG_PORT,
+    host: PG_HOST,
+    user: PG_USER,
+    password: PG_PASSWORD,
+    database: PG_DATABASE,
 });
-
 
 pool.on("connect", () => {
-    console.log("conectado a la base de datos");
+    console.log("connectado a la base de datos");
 });
-
-export { pool };

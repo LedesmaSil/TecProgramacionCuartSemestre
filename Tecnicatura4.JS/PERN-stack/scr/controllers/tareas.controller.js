@@ -1,13 +1,10 @@
 import { pool } from '../db.js';
 
-export const listarTareas = async (req, res) => {
-    console.log(req.usuarioId);
-    const resultado = await pool.query('SELECT * FROM tareas WHERE ususario_id = $1', [req.usuarioId]);
+export const listarTareas = async (req, res, next) => {
+    const resultado = await pool.query('SELECT * FROM tareas WHERE usuario_id = $1', [req.usuarioId]);
     return res.json(resultado.rows);
 }
-
 export const listarTarea = async (req, res) => {
-    console.log(req.cookies.token);
     const resultado = await pool.query('SELECT * FROM tareas WHERE id = $1', [req.params.id]);
     if (resultado.rowCount === 0) {
         return res.status(404).json({
@@ -17,8 +14,10 @@ export const listarTarea = async (req, res) => {
     return res.json(resultado.rows[0]);
 }
 
+
 export const crearTarea = async (req, res, next) => {
     const { titulo, descripcion } = req.body;
+
 
     try {
 
@@ -29,7 +28,7 @@ export const crearTarea = async (req, res, next) => {
         if (error.code === '23505') {
             return res.status(409).json({
                 message: 'Ya existe una tarea con ese titulo'
-                });
+            });
         }
         console.log(error);
         next(error);
@@ -40,23 +39,21 @@ export const actualizarTarea = async (req, res) => {
     const { titulo, descripcion } = req.body;
     const id = req.params.id;
     const result = await pool.query('UPDATE tareas SET titulo = $1, descripcion = $2 WHERE id = $3 RETURNING *', [titulo, descripcion, id]);
-    
+
     if (result.rowCount === 0) {
         return res.status(404).json({
-            message: 'no existe una tarea con ese id'
+            message: 'No existe una tarea con ese id'
         });
     }
     return res.json(result.rows[0]);
 }
+    export const eliminarTarea = async (req, res) => {
+        const resultado = await pool.query('DELETE FROM tareas WHERE id = $1', [req.params.id]);
 
-export const eliminarTarea = async (req, res) => {
-    const resultado = await pool.query('DELETE * FROM tareas WHERE id = $1', [req.params.id]);
-
-    return res.send('Tarea $(req.params.id) eliminada');
-    if (resultado.rowCount === 0) {
-        return res.status(404).json({
-            message: 'no existe una tarea con ese id'
-        });
+        if (resultado.rowCount === 0) {
+            return res.status(404).json({
+                message: 'No existe una tarea con ese id'
+            });
+        }
+        return res.sendStatus(204);
     }
-    return res.sendStatus(204);
-}
